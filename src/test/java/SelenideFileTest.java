@@ -71,9 +71,9 @@ public class SelenideFileTest {
         ZipFile zipFile = new ZipFile("./src/test/resources/ziptest.zip");
         if (zipFile.isEncrypted())
             zipFile.setPassword("589".toCharArray());
-        zipFile.extractAll("./src/test/resources/12");
+        zipFile.extractAll("./src/test/resources/");
 
-        try (FileInputStream stream = new FileInputStream("./src/test/resources/12/t3.txt")) {
+        try (FileInputStream stream = new FileInputStream("./src/test/resources/t3.txt")) {
             String result = new String(stream.readAllBytes(), "UTF-8");
             assertThat(result).contains("chek");
         }
